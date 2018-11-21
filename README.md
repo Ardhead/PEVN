@@ -8,3 +8,7 @@
 2. Run the application
 
    `npm start`
+   
+3. Web UI is available on 
+
+   `http://localhost:3000`
