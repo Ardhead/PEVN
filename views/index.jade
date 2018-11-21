@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  #index(data-json="#{JSON.stringify(data)}")
+  script(src="#{webpack_asset('index', 'js')}")
+  link(rel='stylesheet', href="#{webpack_asset('index', 'css')}")
