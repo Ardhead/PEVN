@@ -1,6 +1,7 @@
 "use strict";
-
 // helper functions
+const csvToJson          = require( "csvtojson" );
+const shipmentsDataModel = require( "../models" ).shipments_data;
 
 // define children circle props
 const setChildrenProps = async( childrenArrObj ) => {
@@ -38,4 +39,22 @@ const prepare = async( rawData ) => {
 	return json;
 };
 
-module.exports = { prepare };
+const fillDb = async () => {
+	// database is empty
+	const jsonArray = await csvToJson().fromFile( `${__dirname}/../csv/shipments.csv` );
+
+	const rawData = await shipmentsDataModel.bulkCreate( jsonArray );
+	return rawData;
+}
+
+// initialize db
+const initializeDb = async () => {
+	// database is empty
+	const countShipments = await shipmentsDataModel.count();
+	if (countShipments === 0) {
+		await fillDb()
+	}
+}
+initializeDb();
+
+module.exports = { prepare, fillDb };

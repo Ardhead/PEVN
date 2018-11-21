@@ -1,7 +1,7 @@
 "use strict";
 const shipmentsDataModel = require( "../models" ).shipments_data;
 const csvToJson          = require( "csvtojson" );
-const dataService        = require( "../services" ).data;
+const shipmentsService   = require( "../services" ).shipments;
 const fs                 = require( "fs" );
 
 // csv config upload to database
@@ -13,7 +13,7 @@ const upload = async( req, res ) => {
 		await fs.unlinkSync( csvFilePath );
 		const rawData = await shipmentsDataModel.bulkCreate( jsonArray );
 		// returning object compiled for D3
-		const data = await dataService.prepare( rawData );
+		const data = await shipmentsService.prepare( rawData );
 	
 		return res.status( 200 ).send( data );
 	} catch ( error ) {

@@ -1,5 +1,4 @@
 "use strict";
-
 const indexRouter = require( "./routes/index" );
 const shipmentsRouter = require( "./routes/shipments" );
 const app   = require( "./app.js" );

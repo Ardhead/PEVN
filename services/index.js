@@ -1,6 +1,7 @@
-const data = require( "./data" );
+"use strict";
+const shipments = require( "./shipments" );
 
 // export all services
 module.exports = {
-	data
+	shipments
 };

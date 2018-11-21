@@ -62,10 +62,13 @@ body {
 .container-element {
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 
 .clean-button {
     height: 5em;
+    display: flex;
+    text-align: center;
 }
 
 .label,

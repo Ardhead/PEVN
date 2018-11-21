@@ -1,3 +1,4 @@
+"use strict";
 const shipments = require( "./shipments" );
 const main = require( "./main" );
 
