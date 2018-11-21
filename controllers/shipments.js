@@ -12,7 +12,7 @@ const upload = async( req, res ) => {
 	
 		await fs.unlinkSync( csvFilePath );
 		const rawData = await shipmentsDataModel.bulkCreate( jsonArray );
-		// returning object compiled for D3
+		// returning object is compiled for D3
 		const data = await shipmentsService.prepare( rawData );
 	
 		return res.status( 200 ).send( data );
@@ -21,7 +21,7 @@ const upload = async( req, res ) => {
 	}
 };
 
-// destroy all database data
+// destroy shipments database data
 const clean = async( req, res ) => {
 	try {
 		await shipmentsDataModel.destroy( { where: {} } );

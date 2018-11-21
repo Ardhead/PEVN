@@ -39,8 +39,8 @@ const prepare = async( rawData ) => {
 	return json;
 };
 
+// fill database from project csv file
 const fillDb = async () => {
-	// database is empty
 	const jsonArray = await csvToJson().fromFile( `${__dirname}/../csv/shipments.csv` );
 
 	const rawData = await shipmentsDataModel.bulkCreate( jsonArray );

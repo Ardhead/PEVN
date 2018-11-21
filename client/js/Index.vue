@@ -43,7 +43,7 @@ export default {
         }
     },
     computed: {
-      // check current status
+      // check current statuses cases
       isInitial() {
         return this.currentStatus === statusInitial;
       },
