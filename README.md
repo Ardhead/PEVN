@@ -1,7 +1,7 @@
 #PENV
 ## Usage
 
-1. Install dependencies & prepare db DB
+1. Install dependencies & prepare DB
 
    `sh prepare.sh`
    
